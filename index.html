@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Encantado - Onde a Magia Vira Realidade!</title>
+    <!-- Incluindo Tailwind CSS para Estilização Rápida e Responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do Tailwind para usar uma paleta de cores rosa e fofa -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta Rosa e Fofa
+                        'primary': '#ec4899', // Pink 500 - Rosa Principal (CTAs)
+                        'secondary': '#fdf2f8', // Pink 50 - Fundo Pastel
+                        'accent': '#a855f7', // Purple 500 - Complementar / Destaque
+                        'darktext': '#831843', // Pink 900 - Texto para contraste
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilos personalizados para o tema Fofo e Mágico */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdf2f8;
+            /* Fundo Rosa Pastel */
+            color: #831843;
+            /* Texto Principal em Rosa Escuro */
+            transition: background-color 0.3s;
+        }
+
+        .hero-bg-enchanted {
+            /* Gradiente de Rosa Claro para Rosa Pastel Forte */
+            background: linear-gradient(160deg, #fce7f3 0%, #fbcfe8 100%);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 8px solid #ec4899;
+            /* Borda rosa forte */
+        }
+
+        /* Elementos de decoração de fundo (estrelas e corações) */
+        .hero-bg-enchanted::before,
+        .hero-bg-enchanted::after {
+            content: '⭐ 💖 ✨';
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: twinkle 10s infinite alternate;
+        }
+
+        .hero-bg-enchanted::before {
+            top: 10%;
+            left: 5%;
+            transform: rotate(10deg);
+        }
+
+        .hero-bg-enchanted::after {
+            bottom: 20%;
+            right: 15%;
+            transform: rotate(-15deg);
+            content: '✨ 🦄 💖';
+            /* Emojis diferentes */
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        .card-fofo {
+            box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3), 0 4px 6px -4px rgba(236, 72, 153, 0.2);
+            border: 2px solid #f9a8d4;
+            /* Rosa mais claro */
+        }
+
+        .card-fofo:hover {
+            transform: scale(1.02);
+            border-color: #a855f7;
+            /* Roxo para destaque */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho (Header) - Fundo branco e logo rosa forte -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Nome do Aplicativo -->
+                <a href="#" class="flex-shrink-0 text-4xl font-extrabold text-primary tracking-wider">
+                    Mundo Encantado
+                </a>
+                <!-- Botão de Ação -->
+                <nav class="space-x-4">
+                    <button id="cta-header"
+                        class="px-6 py-3 bg-accent text-white text-md font-bold rounded-full hover:bg-purple-600 transition duration-300 shadow-xl transform hover:scale-105">
+                        Ver Catálogo de Magia!
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) - Fundo Gradiente Encantado -->
+    <main class="hero-bg-enchanted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 text-center relative z-10">
+            <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-tight text-darktext">
+                <span class="block">Aqui, a <span class="text-primary">Magia</span></span>
+                <span class="block">Vira Realidade!</span>
+            </h1>
+            <p class="mt-4 text-xl sm:text-2xl text-pink-700 max-w-4xl mx-auto font-semibold">
+                Descubra um universo de brinquedos que fazem o coração bater mais forte e transformam o brincar em algo
+                extraordinário.
+            </p>
+
+            <!-- Mockup do Brinquedo Fofo e Rosa -->
+            <div class="mt-16 mx-auto w-full max-w-4xl p-6 bg-white rounded-3xl card-fofo shadow-2xl overflow-hidden">
+                <img src="./img/Unicórnio.png" alt="Unicórnio Mágico de Pelúcia"
+                    class="w-full h-80 object-cover border-4 border-primary/50 rounded-2xl" />
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="mt-12 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button id="cta-main-primary"
+                    class="px-10 py-5 bg-primary text-white text-2xl font-bold rounded-full hover:bg-pink-600 transition duration-300 shadow-2xl shadow-primary/60 transform hover:scale-105">
+                    Quero Brincar!
+                </button>
+                <button id="cta-main-secondary"
+                    class="px-10 py-5 bg-white border-4 border-accent text-accent text-2xl font-bold rounded-full hover:bg-purple-100 transition duration-300 transform hover:scale-105">
+                    Conhecer Novidades
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Seção 2: Destaques e Categorias Populares (Novo Elemento) -->
+    <section class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-12 text-darktext">Explorar Nossas Magias!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Destaque 1: Bonecas -->
+                <div class="bg-white p-6 rounded-2xl card-fofo text-center cursor-pointer">
+                    <div class="text-6xl mb-4">👸</div>
+                    <h3 class="text-xl font-bold text-darktext mb-1">Bonecas Encantadas</h3>
+                    <p class="text-pink-600 text-sm">Princesas, Fadas e muito mais!</p>
+                </div>
+                <!-- Destaque 2: Carrinhos -->
+                <div class="bg-white p-6 rounded-2xl card-fofo text-center cursor-pointer">
+                    <div class="text-6xl mb-4">🚗</div>
+                    <h3 class="text-xl font-bold text-darktext mb-1">Ação e Velocidade</h3>
+                    <p class="text-pink-600 text-sm">Pistas e Veículos Radicais.</p>
+                </div>
+                <!-- Destaque 3: Construção -->
+                <div class="bg-white p-6 rounded-2xl card-fofo text-center cursor-pointer">
+                    <div class="text-6xl mb-4">🧱</div>
+                    <h3 class="text-xl font-bold text-darktext mb-1">Mundos para Construir</h3>
+                    <p class="text-pink-600 text-sm">Blocos e Kits Criativos.</p>
+                </div>
+                <!-- Destaque 4: Pelúcias -->
+                <div class="bg-white p-6 rounded-2xl card-fofo text-center cursor-pointer">
+                    <div class="text-6xl mb-4">🧸</div>
+                    <h3 class="text-xl font-bold text-darktext mb-1">Abraços Fofinhos</h3>
+                    <p class="text-pink-600 text-sm">Bichinhos de Pelúcia Macios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Compromisso (Features) -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-16 text-darktext">Nosso Compromisso com a Diversão</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Embalagem para Presente -->
+                <div class="bg-secondary p-8 rounded-3xl card-fofo text-center">
+                    <div class="text-accent text-5xl mb-4 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-10 h-10 mx-auto">
+                            <path d="M4 12V21a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V12"></path>
+                            <path d="M12 4v16"></path>
+                            <path d="M20 8H4"></path>
+                            <path d="M10 8l2-4 2 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-darktext">Embalagem de Presente Grátis</h3>
+                    <p class="text-pink-700">Toda compra acompanha uma embalagem mágica para deixar a surpresa ainda
+                        mais especial.</p>
+                </div>
+                <!-- Card 2: Segurança Certificada -->
+                <div class="bg-secondary p-8 rounded-3xl card-fofo text-center">
+                    <div class="text-accent text-5xl mb-4 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-10 h-10 mx-auto">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4m0-4h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-darktext">Brinquedos 100% Seguros</h3>
+                    <p class="text-pink-700">Apenas produtos certificados e aprovados para a segurança e tranquilidade
+                        da sua família.</p>
+                </div>
+                <!-- Card 3: Variedade e Qualidade -->
+                <div class="bg-secondary p-8 rounded-3xl card-fofo text-center">
+                    <div class="text-accent text-5xl mb-4 mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="w-10 h-10 mx-auto">
+                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-darktext">Curadoria Mágica</h3>
+                    <p class="text-pink-700">Selecionamos a dedo os brinquedos mais inovadores e educativos do mercado
+                        global.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Chamada para Ação (CTA Final) - Fundo Vibrante em Roxo/Accent -->
+    <section class="py-20 bg-accent">
+        <div
+            class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-purple-600 p-12 rounded-3xl border-4 border-white shadow-2xl">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-4 text-white">Pronto para a Diversão sem Fim?</h2>
+            <p class="text-lg text-purple-100 mb-8 font-medium">Não perca nossas ofertas e o lançamento da nova coleção
+                de pelúcias.</p>
+            <button id="cta-footer"
+                class="px-12 py-5 bg-primary text-white text-2xl font-bold rounded-full hover:bg-pink-600 transition duration-300 shadow-xl shadow-primary/60 transform hover:scale-110">
+                Ver Brinquedos em Promoção!
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Rodapé (Footer) - Fundo Escuro com Detalhes Rosa -->
+    <footer class="bg-darktext border-t border-pink-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-pink-200">
+                <p>&copy; 2025 Mundo Encantado. Feito com Magia e Carinho.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-secondary transition duration-200">Ajuda e FAQ</a>
+                    <a href="#" class="hover:text-secondary transition duration-200">Termos</a>
+                    <a href="#" class="hover:text-secondary transition duration-200">Redes Sociais</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript para interações simples -->
+    <script>
+        // Função para mostrar uma notificação fofa em vez de um alerta
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = '🦄 ' + message;
+            // Estilo fofo e rosa para a notificação
+            notification.className = 'fixed bottom-5 right-5 z-50 bg-primary text-white p-4 rounded-full shadow-2xl transition-opacity duration-300 opacity-0 font-bold text-lg border-4 border-white';
+            document.body.appendChild(notification);
+
+            // Mostrar e Esconder a notificação
+            setTimeout(() => {
+                notification.classList.add('opacity-100');
+            }, 10);
+
+            setTimeout(() => {
+                notification.classList.remove('opacity-100');
+                // Remover o elemento após a transição
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        // Adiciona evento de clique a todos os botões CTA
+        document.querySelectorAll('button[id^="cta-"]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Previne a ação padrão de formulário/link (se fosse um)
+                e.preventDefault();
+                showNotification(`Clique mágico em: "${e.target.textContent.trim()}".`);
+            });
+        });
+
+        window.onload = () => {
+            console.log("Página Mundo Encantado carregada.");
+        }
+    </script>
+
+</body>
+
+</html>
